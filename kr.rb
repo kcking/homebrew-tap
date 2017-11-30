@@ -3,10 +3,6 @@ class Kr < Formula
   homepage "https://krypt.co"
   url "https://github.com/kryptco/kr.git", :tag => "2.3.0"
 
-  head do
-	  url "https://github.com/kryptco/kr.git"
-  end
-
   bottle do
 	root_url "https://github.com/kryptco/bottles/raw/master"
 	cellar :any_skip_relocation
@@ -16,12 +12,16 @@ class Kr < Formula
 	sha256 "2fe93574d959031ae572b0119215156f3d653dfe15f865190b5c33cfdc655045" => :high_sierra
   end
 
+  head do
+	  url "https://github.com/kryptco/kr.git"
+  end
+
+  option "with-no-ssh-config", "DEPRECATED -- export KR_SKIP_SSH_CONFIG=1 to prevent kr from changing ~/.ssh/config"
+
   depends_on "rust" => :build
   depends_on "go" => :build
   depends_on "pkg-config" => :build
   depends_on :xcode => :build
-
-  option "with-no-ssh-config", "DEPRECATED -- export KR_SKIP_SSH_CONFIG=1 to prevent kr from changing ~/.ssh/config"
 
   def install
 	  ENV["GOPATH"] = buildpath
