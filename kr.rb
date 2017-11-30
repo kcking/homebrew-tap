@@ -1,7 +1,10 @@
 class Kr < Formula
   desc "Kryptonite command line client, daemon, and SSH integration"
   homepage "https://krypt.co"
-  url "https://github.com/kryptco/kr.git", :tag => "2.3.0"
+
+  stable do
+	  url "https://github.com/kryptco/kr.git", :tag => "2.3.0"
+  end
 
   bottle do
 	root_url "https://github.com/kryptco/bottles/raw/master"
