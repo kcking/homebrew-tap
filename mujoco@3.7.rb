@@ -1,4 +1,4 @@
-class Mujoco < Formula
+class MujocoAT37 < Formula
   desc "MuJoCo: A general purpose physics simulator"
   homepage "https://mujoco.org"
   url "https://github.com/google-deepmind/mujoco/releases/download/3.3.7/mujoco-3.3.7-macos-universal2.dmg"
