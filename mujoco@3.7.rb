@@ -41,15 +41,15 @@ class MujocoAT37 < Formula
 
   def pc_file
     <<~EOS
-      prefix=#{prefix}
+      prefix=#{opt_prefix}
       exec_prefix=${prefix}
       libdir=${prefix}/Frameworks
       includedir=${prefix}/Frameworks/mujoco.framework/Headers
 
       Name: MuJoCo
       Description: General purpose physics simulator
-      Version: #{version}
-      Libs: -F${libdir} -framework mujoco
+      Version: 3.3.7
+      Libs: -F${libdir} -framework mujoco -Wl,-rpath,${libdir}
       Cflags: -I${includedir}
     EOS
   end
